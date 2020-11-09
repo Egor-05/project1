@@ -9,6 +9,7 @@ def fill_func():
         for i in lst:
             cursor.execute("""INSERT INTO questions ( 
                               question,
+                              person,
                               picture,
                               answer1,
                               eco_index1,
@@ -20,7 +21,7 @@ def fill_func():
                               beh_index2,
                               army_index2,
                               money_index2)
-                              VALUES (?,?,?,?,?,?,?,?,?,?,?,?)""", i.split('|'))
+                              VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)""", i.split('|'))
         conn.commit()
 
 
