@@ -1,4 +1,7 @@
+antiorm==1.2.1
 click==7.1.2
+db==0.1.1
+db-sqlite3==0.0.1
 PyQt5==5.15.1
 PyQt5-sip==12.8.1
 pyqt5-tools==5.15.1.1.7.4

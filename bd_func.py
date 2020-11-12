@@ -6,6 +6,26 @@ def fill_func():
         lst = f.read().splitlines()
         conn = sqlite3.connect("questions_bd.sqlite")
         cursor = conn.cursor()
+        cursor.execute("""CREATE TABLE IF NOT EXISTS questions (
+                          id           INTEGER      PRIMARY KEY AUTOINCREMENT
+                                                    UNIQUE,
+                          question     VARCHAR,
+                          person       VARCHAR (40),
+                          picture      VARCHAR (30),
+                          answer1      VARCHAR (20),
+                          eco_index1   INTEGER,
+                          beh_index1   INTEGER,
+                          army_index1  INTEGER,
+                          money_index1 INTEGER,
+                          answer2      VARCHAR (20),
+                          eco_index2   INTEGER,
+                          beh_index2   INTEGER,
+                          army_index2  INTEGER,
+                          money_index2 INTEGER
+                          )""")
+        conn.commit()
+        cursor.execute("""DELETE from questions""")
+        conn.commit()
         for i in lst:
             cursor.execute("""INSERT INTO questions ( 
                               question,

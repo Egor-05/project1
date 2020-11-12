@@ -33,6 +33,22 @@ class Ui_Dialog(object):
         self.question.setObjectName("label_2")
         self.question.setWordWrap(True)
 
+        self.ikon1 = QtWidgets.QLabel(Dialog)
+        self.ikon1.setGeometry(QtCore.QRect(235, 80, 20, 20))
+        self.ikon1.setObjectName("icon1")
+
+        self.ikon2 = QtWidgets.QLabel(Dialog)
+        self.ikon2.setGeometry(QtCore.QRect(255, 80, 20, 20))
+        self.ikon2.setObjectName("icon2")
+
+        self.ikon3 = QtWidgets.QLabel(Dialog)
+        self.ikon3.setGeometry(QtCore.QRect(275, 80, 20, 20))
+        self.ikon3.setObjectName("icon3")
+
+        self.ikon4 = QtWidgets.QLabel(Dialog)
+        self.ikon4.setGeometry(QtCore.QRect(295, 80, 20, 20))
+        self.ikon4.setObjectName("icon4")
+
         self.name = QtWidgets.QLabel(Dialog)
         self.name.setGeometry(QtCore.QRect(30, 455, 300, 30))
         font = QtGui.QFont()
@@ -50,3 +66,5 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.btn_yes.setText(_translate("Dialog", "Согласиться"))
         self.btn_no.setText(_translate("Dialog", "Отказаться"))
+
+
