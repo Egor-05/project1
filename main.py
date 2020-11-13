@@ -1,12 +1,10 @@
 import sys
-from PyQt5 import QtWidgets
 from PyQt5.Qt import *
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtGui import QPainter, QPixmap, QColor
 from window import Ui_Dialog
 import sqlite3
 from random import randint
-import time
 
 
 class MyWidget(QMainWindow, Ui_Dialog):
