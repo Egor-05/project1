@@ -63,8 +63,13 @@ class MyWidget(QMainWindow, Ui_Dialog):
                                          QMessageBox.Ok)
         with sqlite3.connect('questions_bd.sqlite') as con:
             cur = con.cursor()
+            result = cur.execute(f"""SELECT id FROM questions""").fetchall()
+            b = []
+            for i in result:
+                b.append(int(i[0]))
+            a = self.id
             while a == self.id:
-                a = randint(1, 20)
+                a = randint(min(b), max(b))
             self.id = a
             result = cur.execute(f"""SELECT picture, question, person, answer1, answer2
                                      FROM questions where id = {a}""").fetchall()
@@ -138,9 +143,9 @@ class MyWidget(QMainWindow, Ui_Dialog):
                 self.army += c
                 self.money += d
                 self.update()
+                self.days += 1
                 self.fill_window()
                 self.losing_check()
-                self.days += 1
                 self.days_counter.display(self.days)
 
     # обработка проигрыша
